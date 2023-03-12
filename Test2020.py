@@ -3,7 +3,7 @@
 
 # COMMAND ----------
 
-df = spark.read.format("csv").load("/FileStore/Tables/dept.csv")
+df = spark.read.format("csv").option("header",true).load("/FileStore/Tables/dept.csv")
 
 # COMMAND ----------
 
@@ -19,4 +19,5 @@ df.write.format("csv").mode("overwrite").saveAsTable("dept")
 # MAGIC select * from dept
 
 # COMMAND ----------
+
 
